@@ -1,0 +1,28 @@
+{
+    "name": "@quados/cli",
+    "version": "1.0.0",
+    "description": "QuadOS cli",
+    "author": "Henry-Hiles",
+    "license": "GPL-3.0-only",
+    "type": "module",
+    "packageManager": "pnpm@8.14.0",
+    "main": "cli.ts",
+    "devDependencies": {
+        "@commander-js/extra-typings": "^12.0.1",
+        "@types/node": "^20.11.24",
+        "esbuild": "^0.20.1",
+        "esbuild-plugin-import-pattern": "^0.1.0",
+        "tsx": "^4.7.1"
+    },
+    "scripts": {
+        "install": "tsx esbuild.ts",
+        "postinstall": "sed '1i #!/usr/bin/env node' dist/out.js > ~/.local/bin/quad"
+    },
+    "dependencies": {
+        "@quados/helpers": "link:../helpers",
+        "chalk": "^5.3.0",
+        "commander": "^12.0.0",
+        "ora": "^8.0.1",
+        "quados": "link:../tools"
+    }
+}
