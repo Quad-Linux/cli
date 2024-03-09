@@ -1,16 +1,22 @@
 import chalk from "chalk"
 import { createCommand } from "commander"
 import { flatpakExec } from "@quados/helpers/flatpak"
-import { Package } from "quados"
 import spin from "@quados/helpers/spin"
-import { getPackages } from "../helpers/config"
+import { execAsync } from "@quados/helpers/cli"
+import parseList from "@quados/helpers/parseList"
 
 export default createCommand("commits")
     .summary("view commits for a package")
     .argument("<app>", "the application to look for")
     .action(async (app: string) => {
-        const { default: pkgs }: { default: Record<string, Package> } =
-            await spin("Importing packages...", import(getPackages()))
+        const remotePackages = await spin(
+            "Loading packages...",
+            execAsync(
+                "flatpak remote-ls --system --columns=name,application,commit,origin"
+            )
+        )
+
+        const pkgs = parseList(remotePackages)
 
         const pkg = pkgs[app]
         if (!pkg)

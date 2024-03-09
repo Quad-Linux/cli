@@ -8,14 +8,14 @@ import { getPackages } from "../helpers/config"
 export default createCommand("update")
     .summary("update package lock")
     .action(async () => {
-        const installed = await spin(
+        const remotePackages = await spin(
             "Loading packages...",
             execAsync(
                 "flatpak remote-ls --system --columns=name,application,commit,origin"
             )
         )
 
-        const packages = parseList(installed)
+        const packages = parseList(remotePackages)
 
         await spin(
             "Writing packages...",
