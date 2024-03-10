@@ -14,10 +14,10 @@ modules:
       sources:
           - type: file
             url: https://github.com/Quad-Linux/cli/releases/download/v0.1.0/out.js
-            sha256: d1629b18fdd8e80971697d523577fa942f8c10e8122a50bd0a8a67d531472649
+            sha256: 3fd1191deb416b5297cc8bc5d254528fdba3f27e10d1f4319258b928fd3c091e
             dest-filename: out.js
       buildsystem: simple
       build-commands:
           - /usr/lib/sdk/node20/install.sh
-          - cat out.js | sed '1i \#!/app/node/bin/node' > quad
+          - sed '1i \#!/app/node/bin/node' out.js > quad
           - install -D quad /app/bin/quad
