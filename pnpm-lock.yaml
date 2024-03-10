@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@quados/helpers':
-    specifier: link:../helpers
-    version: link:../helpers
+    specifier: file:../helpers
+    version: file:../helpers
   chalk:
     specifier: ^5.3.0
     version: 5.3.0
@@ -18,8 +18,8 @@ dependencies:
     specifier: ^8.0.1
     version: 8.0.1
   quados:
-    specifier: link:../tools
-    version: link:../tools
+    specifier: file:../tools
+    version: file:../tools
 
 devDependencies:
   '@commander-js/extra-typings':
@@ -487,7 +487,6 @@ packages:
     resolution: {integrity: sha512-TBHyJxk2b7HceLVGFcpAUjsa5zIdsPWlR6XHfyGzd0SFu+/NFgQgMAl96MSDZgQDvJAvV6BKsFOrt6zIL09JDw==}
     dependencies:
       undici-types: 5.26.5
-    dev: true
 
   /ansi-regex@6.0.1:
     resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
@@ -521,6 +520,10 @@ packages:
   /commander@12.0.0:
     resolution: {integrity: sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==}
     engines: {node: '>=18'}
+
+  /dataclass@2.1.1:
+    resolution: {integrity: sha512-UNG2qao2GaHrnVQtarekOjUt1BvU6vt1OUnYSp+3BuFNs+iKjiBmIz2cabXtP2ZjthM8n3ox1lRKrUxp4SKG9A==}
+    dev: false
 
   /emoji-regex@10.3.0:
     resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
@@ -801,4 +804,22 @@ packages:
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-    dev: true
+
+  file:../helpers:
+    resolution: {directory: ../helpers, type: directory}
+    name: '@quados/helpers'
+    dependencies:
+      '@types/node': 20.11.25
+      chalk: 5.3.0
+      ora: 8.0.1
+      quados: link:../tools
+    dev: false
+
+  file:../tools:
+    resolution: {directory: ../tools, type: directory}
+    name: quados
+    dependencies:
+      '@quados/helpers': link:../helpers
+      '@types/node': 20.11.25
+      dataclass: 2.1.1
+    dev: false

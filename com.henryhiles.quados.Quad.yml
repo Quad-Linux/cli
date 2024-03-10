@@ -1,21 +1,23 @@
 id: com.henryhiles.quados.Quad
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+    - org.freedesktop.Sdk.Extension.node20
+runtime: org.freedesktop.Platform
+runtime-version: "23.08"
+finish-args:
+    - --talk-name=org.freedesktop.Flatpak
+    - --filesystem=~/.config/quados:w
+
 command: quad
 modules:
-  - name: yourapp
-    build-options:
-      env:
-        - PNPM_CONFIG_REGISTRY=https://registry.npmjs.org/
-    sources:
-      - type: git
-        url: https://github.com/your/yourapp.git
-        branch: master  # or specify the branch/tag you want to use
-    buildsystem: simple
-    build-commands:
-      - mkdir dist
-      - pnpm install
-      - pnpm build > dist/out.js
-    dest: /app
-    build-extensions:
-      - nodejs
-    build-commands:
-      - install -D dist.sh /app/bin/hello.sh
+    - name: quad
+      sources:
+          - type: file
+            url: https://github.com/Quad-Linux/cli/releases/download/v0.1.0/out.js
+            sha256: d1629b18fdd8e80971697d523577fa942f8c10e8122a50bd0a8a67d531472649
+            dest-filename: out.js
+      buildsystem: simple
+      build-commands:
+          - /usr/lib/sdk/node20/install.sh
+          - cat out.js | sed '1i \#!/app/node/bin/node' > quad
+          - install -D quad /app/bin/quad
