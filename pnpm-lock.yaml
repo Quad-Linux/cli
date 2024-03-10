@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@quados/helpers':
-    specifier: file:../helpers
-    version: file:../helpers
+    specifier: github:Quad-Linux/helpers
+    version: github.com/Quad-Linux/helpers/b6cbd7efd661c121c43d1d98e1d5eb758a443240
   chalk:
     specifier: ^5.3.0
     version: 5.3.0
@@ -18,8 +18,8 @@ dependencies:
     specifier: ^8.0.1
     version: 8.0.1
   quados:
-    specifier: file:../tools
-    version: file:../tools
+    specifier: github:Quad-Linux/tools
+    version: github.com/Quad-Linux/tools/5fc9c1b647a186a33ad377180dec3e5a7281b312
 
 devDependencies:
   '@commander-js/extra-typings':
@@ -805,19 +805,21 @@ packages:
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  file:../helpers:
-    resolution: {directory: ../helpers, type: directory}
+  github.com/Quad-Linux/helpers/b6cbd7efd661c121c43d1d98e1d5eb758a443240:
+    resolution: {tarball: https://codeload.github.com/Quad-Linux/helpers/tar.gz/b6cbd7efd661c121c43d1d98e1d5eb758a443240}
     name: '@quados/helpers'
+    version: 1.0.0
     dependencies:
       '@types/node': 20.11.25
       chalk: 5.3.0
       ora: 8.0.1
-      quados: link:../tools
+      quados: github.com/Quad-Linux/tools/5fc9c1b647a186a33ad377180dec3e5a7281b312
     dev: false
 
-  file:../tools:
-    resolution: {directory: ../tools, type: directory}
+  github.com/Quad-Linux/tools/5fc9c1b647a186a33ad377180dec3e5a7281b312:
+    resolution: {tarball: https://codeload.github.com/Quad-Linux/tools/tar.gz/5fc9c1b647a186a33ad377180dec3e5a7281b312}
     name: quados
+    version: 1.0.0
     dependencies:
       '@quados/helpers': link:../helpers
       '@types/node': 20.11.25
