@@ -6,7 +6,7 @@ runtime: org.freedesktop.Platform
 runtime-version: "23.08"
 finish-args:
     - --talk-name=org.freedesktop.Flatpak
-    - --filesystem=~/.config/quados:w
+    - --filesystem=~/.config/quados
 
 command: quad
 modules:
