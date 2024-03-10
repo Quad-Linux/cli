@@ -1,0 +1,21 @@
+id: com.henryhiles.quados.Quad
+command: quad
+modules:
+  - name: yourapp
+    build-options:
+      env:
+        - PNPM_CONFIG_REGISTRY=https://registry.npmjs.org/
+    sources:
+      - type: git
+        url: https://github.com/your/yourapp.git
+        branch: master  # or specify the branch/tag you want to use
+    buildsystem: simple
+    build-commands:
+      - mkdir dist
+      - pnpm install
+      - pnpm build > dist/out.js
+    dest: /app
+    build-extensions:
+      - nodejs
+    build-commands:
+      - install -D dist.sh /app/bin/hello.sh

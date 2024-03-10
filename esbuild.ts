@@ -5,7 +5,6 @@ await build({
     entryPoints: ["cli.ts"],
     bundle: true,
     platform: "node",
-    outfile: "dist/out.js",
     plugins: [importPatternPlugin()],
     treeShaking: true,
     minify: true,
