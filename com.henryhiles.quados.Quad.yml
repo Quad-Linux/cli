@@ -14,7 +14,7 @@ modules:
       sources:
           - type: file
             url: https://github.com/Quad-Linux/cli/releases/download/v0.1.0/out.js
-            sha256: 3fd1191deb416b5297cc8bc5d254528fdba3f27e10d1f4319258b928fd3c091e
+            sha256: 1e145b04c8eb39bf03601ec4cca9cadcfbaa1d224f55290b87178979788f3273
             dest-filename: out.js
       buildsystem: simple
       build-commands:
