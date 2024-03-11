@@ -6,6 +6,7 @@ await build({
     bundle: true,
     platform: "node",
     outfile: "dist/out.js",
+    banner: { js: "#!/usr/bin/env node" },
     plugins: [importPatternPlugin()],
     treeShaking: true,
     minify: true,

@@ -7,6 +7,7 @@ runtime-version: "23.08"
 finish-args:
     - --talk-name=org.freedesktop.Flatpak
     - --filesystem=~/.config/quados
+    - --filesystem=~/.local/bin
 
 command: quad
 modules:
@@ -14,10 +15,14 @@ modules:
       sources:
           - type: file
             url: https://github.com/Quad-Linux/cli/releases/download/v0.1.0/out.js
-            sha256: 1e145b04c8eb39bf03601ec4cca9cadcfbaa1d224f55290b87178979788f3273
-            dest-filename: out.js
+            sha256: 5b43f3e779437752da284d17b07b49fb8f93362083836ec85365c47f1710ca06
+            dest-filename: quad
+          - type: file
+            url: https://github.com/pnpm/pnpm/releases/download/v8.14.0/pnpm-linux-x64
+            sha256: 92b2da9a8b2c669ae3741a52dde8f8b694330dbd4cf49bfb331f2454e98556fb
+            dest-filename: pnpm
       buildsystem: simple
       build-commands:
-          - /usr/lib/sdk/node20/install.sh
-          - sed '1i \#!/app/node/bin/node' out.js > quad
+          - install -D /usr/lib/sdk/node20/bin/node /app/bin/node
+          - install -D pnpm /app/bin/pnpm
           - install -D quad /app/bin/quad
