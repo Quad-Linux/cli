@@ -8,6 +8,7 @@ finish-args:
     - --talk-name=org.freedesktop.Flatpak
     - --filesystem=~/.config/quados
     - --filesystem=~/.local/bin
+    - --filesystem=~/.var/app
 
 command: quad
 modules:
