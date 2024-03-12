@@ -15,14 +15,17 @@ modules:
       sources:
           - type: file
             url: https://github.com/Quad-Linux/cli/releases/download/v0.1.0/out.js
-            sha256: 5b43f3e779437752da284d17b07b49fb8f93362083836ec85365c47f1710ca06
+            sha256: 6e1ef4c58969c86f106797177d6c4556e9046732993823b451f462be6d5928a5
             dest-filename: quad
           - type: file
             url: https://github.com/pnpm/pnpm/releases/download/v8.14.0/pnpm-linux-x64
-            sha256: 92b2da9a8b2c669ae3741a52dde8f8b694330dbd4cf49bfb331f2454e98556fb
+            sha256: 8bd24e959f60d9585cee44a56dec5fda59241d6fa4e2cd4046d9263f3a0271b1
             dest-filename: pnpm
+          - type: file
+            url: https://github.com/Henry-Hiles/ts-run/raw/main/ts-run.sh
+            sha256: 84815976c3940405ebd5f38e102f271294d0a300a6de106676352ffbb18bee5c
+            dest-filename: ts-run
       buildsystem: simple
       build-commands:
           - install -D /usr/lib/sdk/node20/bin/node /app/bin/node
-          - install -D pnpm /app/bin/pnpm
-          - install -D quad /app/bin/quad
+          - install -D * /app/bin/

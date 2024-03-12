@@ -7,6 +7,7 @@ await build({
     platform: "node",
     outfile: "dist/out.js",
     banner: { js: "#!/usr/bin/env node" },
+    external: ["esbuild"],
     plugins: [importPatternPlugin()],
     treeShaking: true,
     minify: true,

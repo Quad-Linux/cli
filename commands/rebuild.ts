@@ -6,11 +6,8 @@ export default createCommand("rebuild")
     .summary("rebuild system")
     .action(
         async () =>
-            await spawnAsync(
-                `pnpm esbuild --bundle config.ts --minify --tree-shaking --platform=node | node`,
-                {
-                    stdio: "inherit",
-                    cwd: getConfigDir(),
-                }
-            )
+            await spawnAsync(`ts-run config.ts`, {
+                cwd: getConfigDir(),
+                stdio: "inherit",
+            })
     )

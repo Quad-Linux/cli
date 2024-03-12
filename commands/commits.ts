@@ -1,9 +1,8 @@
 import chalk from "chalk"
 import { createCommand } from "commander"
 import spin from "@quados/helpers/spin"
-import { execAsync } from "@quados/helpers/cli"
+import { execAsync, flatpakExec } from "@quados/helpers/cli"
 import parseList from "@quados/helpers/parseList"
-import { flatpakExec } from "quados/flatpak"
 
 export default createCommand("commits")
     .summary("view commits for a package")
