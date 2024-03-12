@@ -1,6 +1,6 @@
 import { writeFile } from "fs/promises"
 import { execAsync } from "@quados/helpers/cli"
-import parseList from "@quados/helpers/parseList"
+import { parseList } from "@quados/helpers"
 import { createCommand } from "commander"
 import spin from "@quados/helpers/spin"
 import { getPackages } from "../helpers/config"

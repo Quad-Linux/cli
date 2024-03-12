@@ -1,6 +1,6 @@
 import { createCommand } from "commander"
 import { getConfigDir } from "../helpers/config"
-import { spawnAsync } from "@quados/helpers/cli"
+import { spawnAsync } from "@quados/helpers"
 
 export default createCommand("rebuild")
     .summary("rebuild system")
