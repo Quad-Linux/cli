@@ -21,7 +21,7 @@ export default createCommand("update")
             "Writing packages...",
             writeFile(
                 getPackages(),
-                `import { Package } from "quados"
+                `import { Package } from "@quados/models"
 export default {${Object.keys(packages).map(
                     (key) =>
                         `${JSON.stringify(

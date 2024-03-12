@@ -16,7 +16,7 @@ modules:
       sources:
           - type: file
             url: https://github.com/Quad-Linux/cli/releases/download/v0.1.0/out.js
-            sha256: 6e1ef4c58969c86f106797177d6c4556e9046732993823b451f462be6d5928a5
+            sha256: 0dc6294fb603a18b94624c1066896eb9d765246aa445f849b3e498685ac13049
             dest-filename: quad
           - type: file
             url: https://github.com/pnpm/pnpm/releases/download/v8.14.0/pnpm-linux-x64
