@@ -24,7 +24,7 @@ modules:
             dest-filename: pnpm
           - type: file
             url: https://github.com/Henry-Hiles/ts-run/raw/main/ts-run.sh
-            sha256: 84815976c3940405ebd5f38e102f271294d0a300a6de106676352ffbb18bee5c
+            sha256: 17dacfe06b66a40bc8d0bf7f502b42bfbf17ee39524d36c9a287a7dd84d87141
             dest-filename: ts-run
       buildsystem: simple
       build-commands:
