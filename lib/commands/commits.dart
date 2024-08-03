@@ -7,8 +7,12 @@ class CommitsCommand extends Command {
   @override
   final description = "View commits for a package";
 
+  CommitsCommand() {
+    // argParser.addOption(name)
+  }
+
   @override
   void run() {
-    print(white.wrap("Test"));
+    print(red.wrap("Test"));
   }
 }

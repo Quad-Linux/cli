@@ -1,0 +1,20 @@
+id: com.henryhiles.quados.Quad
+sdk: org.freedesktop.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: "23.08"
+finish-args:
+    - --talk-name=org.freedesktop.Flatpak
+    - --filesystem=~/.config/quados
+    - --filesystem=~/.local/bin
+    - --filesystem=~/.var/app
+
+command: quad
+modules:
+    - name: quad
+      sources:
+          - type: file
+            path: build/quad
+            dest-filename: quad
+      buildsystem: simple
+      build-commands:
+          - install -D quad /app/bin/quad

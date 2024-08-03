@@ -7,5 +7,7 @@ void main(List<String> args) async {
     runner.addCommand(command);
   }
 
-  await runner.run(args);
+  await runner
+      .run(args)
+      .catchError((error) => {if (error is UsageException) {}});
 }
