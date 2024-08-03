@@ -4,3 +4,4 @@
 build/
 repo/
 .flatpak-builder/
+.direnv/

@@ -15,7 +15,7 @@
         _module.args.pkgs = import nixpkgs { inherit system; };
 
         devShells.default = pkgs.mkShell  {
-          buildInputs = with pkgs; [just dart watchexec flatpak];
+          buildInputs = with pkgs; [just dart watchexec];
         };
       };
     };
