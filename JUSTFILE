@@ -2,7 +2,7 @@ watch:
 	watchexec -e dart just build
 
 build:
-	dart compile exe bin/cli.dart -o build/quad
+	dart pub get && dart compile exe bin/cli.dart -o build/quad
 
 flatpak:
 	just build && flatpak run org.flatpak.Builder --force-clean --install-deps-from=flathub --repo=repo build/flatpak com.henryhiles.quados.Quad.yml
